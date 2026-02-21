@@ -1,4 +1,5 @@
 import "./styles.css";
+import {v4} from "uuid";
 
 interface Car {
   brand: string;
@@ -17,7 +18,7 @@ const cars: Car[] = [
 function Homework_06() {
 
   const carsDetails = cars.map((car: Car) => (
-    <div className="card">
+    <div key={v4()} className="card">
       <h2 className="card-title"><span>Brand:</span> {car.brand}</h2>
       <p className="card-text">
         <span>Price: </span> {car.price}
