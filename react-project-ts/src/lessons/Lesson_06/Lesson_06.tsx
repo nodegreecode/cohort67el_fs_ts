@@ -1,3 +1,5 @@
+import {PageWrapper} from "./styles.ts";
+
 function Lesson_06() {
   /**************************** 1. String  ****************************/
   let userFullName: string = "John Johnson";
@@ -101,7 +103,7 @@ function Lesson_06() {
   userData = null;
   userData =  user1;
 
-  return <div>Lesson_06</div>;
+  return <PageWrapper>Lesson_06</PageWrapper>;
 }
 
 export default Lesson_06;
