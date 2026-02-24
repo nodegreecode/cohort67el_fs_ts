@@ -1,27 +1,27 @@
-import "./styles.css";
+import {PageWrapper} from "./styles.ts";
 import { useState } from "react";
 import Feedback from "components/Feedback/Feedback";
 
 function Homework_07() {
-  const [like, setLike] = useState(0);
-  const [dislike, setDislike] = useState(0);
+  const [like, setLike] = useState<number>(0);
+  const [dislike, setDislike] = useState<number>(0);
 
-  const onLike = () => {
-    setLike((prevValue) => {
+  const onLike = (): void => {
+    setLike((prevValue: number) => {
       return prevValue + 1;
     });
   };
 
-  const onDislike = () => {
+  const onDislike = (): void => {
     setDislike((prevValue) => prevValue + 1);
   };
 
-  const resetResults = () => {
+  const resetResults = (): void => {
     setLike(0);
     setDislike(0);
   };
   return (
-    <section className="homework_07-section">
+    <PageWrapper >
       <Feedback
         like={like}
         dislike={dislike}
@@ -29,7 +29,7 @@ function Homework_07() {
         onDislike={onDislike}
         resetResults={resetResults}
       />
-    </section>
+    </PageWrapper>
   );
 }
 
