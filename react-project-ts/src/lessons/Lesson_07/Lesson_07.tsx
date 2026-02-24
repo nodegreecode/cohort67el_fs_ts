@@ -1,4 +1,4 @@
-import {PageWrapper} from "./styles.ts";
+import "./styles.css";
 import { useState } from "react";
 import { WEATHER_CODES } from "./types.ts";
 
@@ -102,7 +102,7 @@ function Lesson_07() {
   };
 
   return (
-    <PageWrapper>
+    <div className="lesson_07_page_wrapper">
       <Button name="Simple Button" onClick={sendCounterResult}/>
       <Input
         id="simple-input"
@@ -111,7 +111,7 @@ function Lesson_07() {
         label="Simple Input"
       />
       <Counter count={count} onMinus={onMinus} onPlus={onPlus} />
-    </PageWrapper>
+    </div>
   );
 }
 export default Lesson_07;

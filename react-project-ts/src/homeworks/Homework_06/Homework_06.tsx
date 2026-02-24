@@ -1,12 +1,5 @@
-import {
-  PageWrapper,
-  Container,
-  CardWrapper,
-  Card,
-  CardTitle,
-  CardText,
-} from "./styles.ts";
-import { v4 } from "uuid";
+import "./styles.css";
+import {v4} from "uuid";
 
 interface Car {
   brand: string;
@@ -23,26 +16,27 @@ const cars: Car[] = [
 ];
 
 function Homework_06() {
+
   const carsDetails = cars.map((car: Car) => (
-    <Card key={v4()}>
-      <CardTitle>
-        <span>Brand:</span> {car.brand}
-      </CardTitle>
-      <CardText>
+    <div key={v4()} className="card">
+      <h2 className="card-title"><span>Brand:</span> {car.brand}</h2>
+      <p className="card-text">
         <span>Price: </span> {car.price}
-      </CardText>
-      <CardText>
+      </p>
+      <p className="card-text">
         <span>Fuel type:</span> {car.isDiesel ? "Diesel" : "Patrol"}
-      </CardText>
-    </Card>
-  ));
+      </p>
+    </div>
+  ))
 
   return (
-    <PageWrapper>
-      <Container>
-        <CardWrapper>{carsDetails}</CardWrapper>
-      </Container>
-    </PageWrapper>
+    <section className="homework_06-section">
+      <div className="container">
+        <div className="card-wrapper">
+          {carsDetails}
+        </div>
+      </div>
+    </section>
   );
 }
 

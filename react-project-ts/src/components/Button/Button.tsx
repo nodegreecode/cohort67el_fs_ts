@@ -1,17 +1,12 @@
-import {ButtonComponent} from "./styles.ts";
-import { type ButtonProps } from "./types.ts";
+import "./styles.css";
+import {type ButtonProps} from "./types.ts";
 
-function Button({
-  name = "Send",
-  type = "button",
-  onClick = () => {},
-  isDelete = false,
-  disabled = false,
-}: ButtonProps) {
+
+function Button({ name = "Send", type = "button", onClick = () => {} }: ButtonProps) {
   return (
-    <ButtonComponent disabled={disabled} $isDelete={isDelete} type={type} onClick={onClick}>
+    <button  className="button_component" type={type} onClick={onClick}>
       {name}
-    </ButtonComponent>
+    </button>
   );
 }
 
