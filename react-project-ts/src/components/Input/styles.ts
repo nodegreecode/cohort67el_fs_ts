@@ -10,7 +10,7 @@ const generateInputColor = (disabled: boolean | undefined): string => {
 };
 
 const generateInputBorder = (error: string | undefined) => {
-  return error && error.length > 0 ? "red" : "";
+  return error && error.length > 0 ? "red" : "#3f3f3f";
 };
 
 export const InputWrapper = styled.div`
@@ -27,11 +27,11 @@ export const InputLabel = styled.label`
 export const InputComponent = styled.input<InputComponentProps>`
   width: 100%;
   height: 50px;
-  border: 1px solid #3f3f3f;
+  border: 1px solid ${({$error})=> generateInputBorder($error)};
   border-radius: 4px;
   padding: 12px;
   outline: none;
-
+  cursor: ${({disabled})=> disabled ? "not-allowed" : "pointer"};
   &::placeholder {
     color: #6f6f6f;
     font-size: 16px;
@@ -39,5 +39,10 @@ export const InputComponent = styled.input<InputComponentProps>`
 
   background-color: ${({ disabled }) => generateInputColor(disabled)};
   
-  border-color: ${({$error})=> generateInputBorder($error)};
+ 
+`;
+
+export const ErrorMessage = styled.p`
+height: 20px;
+  color: #ff6868ff;
 `;
