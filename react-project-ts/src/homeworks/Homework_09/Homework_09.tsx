@@ -1,6 +1,6 @@
-import { PageWrapper, ActivityPlanner } from "./styles.ts";
+import { PageWrapper, ActivityPlanner, ActivityPlannerTitle, GroupControl, Activities, ActivityWrapper, Activity } from "./styles.ts";
 import { v4 } from "uuid";
-import { Activity, useState } from "react";
+import { type ChangeEvent, useState } from "react";
 import Input from "components/Input/Input.tsx";
 import Button from "components/Button/Button.tsx";
 
@@ -8,38 +8,38 @@ export default function Homework_09() {
   const [activity, setActivity] = useState<string>("");
   const [notes, setNotes] = useState<string[]>([]);
 
-  const handleOnChane = (event) => {
+  const handleOnChane = (event: ChangeEvent<HTMLInputElement>) => {
     setActivity(event.target.value);
   };
 
   const handleAddNote = () => {
-    if(activity !== "") {
+    if (activity !== "") {
       setNotes((prevValue) => [...prevValue, activity]);
       setActivity("");
     }
-
-
   };
   return (
     <PageWrapper>
       <ActivityPlanner>
-        <h2>Activities</h2>
+        <ActivityPlannerTitle>Activities Planner</ActivityPlannerTitle>
+       <GroupControl>
         <Input
           onChange={handleOnChane}
           value={activity}
           id={v4()}
-          name="note"
-          label="Note"
-          placeholder="Enter your note"
+          name="activity"
+          label="Activity"
+          placeholder="Enter your activity"
         />
         <Button name="Add" onClick={handleAddNote} />
-        <ul>
+        </GroupControl>
+        <Activities>
           {notes.map((note: string) => (
-            <li key={v4()}>
-              <p>{note}</p>
-            </li>
+            <ActivityWrapper key={v4()}>
+              <Activity>{note}</Activity>
+            </ActivityWrapper>
           ))}
-        </ul>
+        </Activities>
       </ActivityPlanner>
     </PageWrapper>
   );
