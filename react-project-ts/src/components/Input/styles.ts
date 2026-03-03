@@ -27,22 +27,19 @@ export const InputLabel = styled.label`
 export const InputComponent = styled.input<InputComponentProps>`
   width: 100%;
   height: 50px;
-  border: 1px solid ${({$error})=> generateInputBorder($error)};
+  border: 1px solid ${({ $error }) => generateInputBorder($error)};
   border-radius: 4px;
   padding: 12px;
   outline: none;
-  cursor: ${({disabled})=> disabled ? "not-allowed" : "pointer"};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   &::placeholder {
     color: #6f6f6f;
     font-size: 16px;
   }
-
   background-color: ${({ disabled }) => generateInputColor(disabled)};
-  
- 
 `;
 
 export const ErrorMessage = styled.p`
-height: 20px;
+  height: 20px;
   color: #ff6868ff;
 `;
