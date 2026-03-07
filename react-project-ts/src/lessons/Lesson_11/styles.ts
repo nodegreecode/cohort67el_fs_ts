@@ -60,3 +60,19 @@ export const Text = styled.p`
 export const TextBold = styled.span`
 font-weight: bold;
 `;
+
+export const WebSites = styled.div `
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+
+  & a {
+    font-size: 18px;
+    text-decoration: none;
+
+    &:hover {
+      color: #9a9ae4;
+    }
+  }
+`;

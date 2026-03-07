@@ -8,6 +8,7 @@ import {
   UniversityCard,
   Text,
   TextBold,
+  WebSites,
 } from "./styles.ts";
 import { useState, type ChangeEvent } from "react";
 import axios from "axios";
@@ -93,9 +94,16 @@ export default function Lesson_011() {
                 <Text>
                   <TextBold>Country: </TextBold> {u.country}
                 </Text>
-                <Text>
-                  <TextBold>WebSites: </TextBold> {u.webPages.join()}
-                </Text>
+                <WebSites>
+                  <TextBold>WebSites: </TextBold>
+                  {u.webPages.map((w) => (
+                    <div key={v4()}>
+                      <a href={w} target="_blank">
+                        {w}
+                      </a>
+                    </div>
+                  ))}
+                </WebSites>
               </UniversityCard>
             ))}
           </Universities>
