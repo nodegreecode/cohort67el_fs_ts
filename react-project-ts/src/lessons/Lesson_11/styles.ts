@@ -42,7 +42,7 @@ export const Universities = styled.ul`
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
-  gap: 10px;
+  gap: 20px;
 `;
 
 export const UniversityCard = styled.li`
