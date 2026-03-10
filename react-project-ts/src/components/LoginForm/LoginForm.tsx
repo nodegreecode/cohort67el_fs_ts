@@ -1,12 +1,24 @@
-import { type ChangeEvent } from "react";
-import { useState } from "react";
+import { LoginFormContainer, Title, InputsContainer } from "./styles.ts";
+//import { type ChangeEvent } from "react";
+import { LOGIN_FORM_VALUES } from "./types.ts";
+import { type FormikValues, useFormik } from "formik";
+import * as Yup from "yup";
+//import { useState } from "react";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
-import { LoginFormContainer, Title, InputsContainer } from "./styles.ts";
+
+const validationSchema = Yup.object().shape({
+  [LOGIN_FORM_VALUES.EMAIL]: Yup.string()
+    .required("Email field is required")
+    .email("This field should be in email format!"),
+  [LOGIN_FORM_VALUES.PASSWORD]: Yup.string()
+    .required("Password field is required")
+    .min(5, "Password field should contain min 5 characters")
+    .max(20, 'Password field should contain max 20 characters"'),
+});
 
 function LoginForm() {
-  //const [inputValue, setInputValue] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
+  /*  const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
   const changeEmail = (event: ChangeEvent<HTMLInputElement>) => {
@@ -21,40 +33,48 @@ function LoginForm() {
     event.preventDefault();
     console.info("Email ", email);
     console.info("Password ", password);
-  };
-
-  /*const onChangeInputValue = (event: ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
   };*/
 
+  const formik = useFormik<FormikValues>({
+    initialValues: {
+      [LOGIN_FORM_VALUES.EMAIL]: "",
+      [LOGIN_FORM_VALUES.PASSWORD]: "",
+    },
+    validationSchema: validationSchema,
+    validateOnChange: false,
+    onSubmit: (values, helpers) => {
+      console.log("Formik submit event works!");
+      console.log(values, helpers);
+      helpers.resetForm();
+    },
+  });
+
+  console.log(formik);
+
   return (
-    <LoginFormContainer onSubmit={login}>
+    <LoginFormContainer onSubmit={formik.handleSubmit}>
       <Title>Login form</Title>
       <InputsContainer>
         <Input
           id="email-id"
-          name="email"
-          type="email"
+          name={LOGIN_FORM_VALUES.EMAIL}
+          type="text"
           placeholder="Enter your email"
           label="Email"
-          value={email}
-          onChange={changeEmail}
+          value={formik.values[LOGIN_FORM_VALUES.EMAIL]}
+          onChange={formik.handleChange}
+          error={formik.errors[LOGIN_FORM_VALUES.EMAIL]}
         />
         <Input
           id="password-id"
-          name="password"
+          name={LOGIN_FORM_VALUES.PASSWORD}
           type="password"
           placeholder="Enter your password"
           label="Password"
-          value={password}
-          onChange={changePassword}
+          value={formik.values[LOGIN_FORM_VALUES.PASSWORD]}
+          onChange={formik.handleChange}
+          error={formik.errors[LOGIN_FORM_VALUES.PASSWORD]}
         />
-        {/*        <input
-          onChange={onChangeInputValue}
-          value={inputValue}
-          type="text"
-          placeholder="Enter your text"
-        />*/}
       </InputsContainer>
       <Button name="Login" type="submit" onClick={() => console.log("Login")} />
     </LoginFormContainer>
