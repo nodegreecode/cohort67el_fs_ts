@@ -34,12 +34,11 @@ export default function Lesson_011() {
     event.preventDefault();
     setUniversities([]);
     setError(undefined);
+    setIsLoading(true);
 
     try {
-      setIsLoading(true); // move up
-
       const response = await axios.get(`${UNIVERSITIES_URL}${country}`);
-      const filteredData = response.data.splice(0, 15);
+      const filteredData = response.data.slice(0, 15);
       const newUniversities = filteredData.map((u: any) => ({
         name: u.name,
         country: u.country,
