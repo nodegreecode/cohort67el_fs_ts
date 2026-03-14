@@ -22,8 +22,9 @@ export default function ContactUs() {
       [CONTACT_FORM_VALUES.EMAIL]: "",
     },
     validationSchema,
-    onSubmit: () => {
-      console.log(formik.values);
+    validateOnChange: false,
+    onSubmit: (values) => {
+      console.log(values);
     },
   });
 
