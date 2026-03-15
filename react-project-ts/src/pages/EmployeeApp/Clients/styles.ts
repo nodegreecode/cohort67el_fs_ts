@@ -10,8 +10,6 @@ export const PageWrapper = styled.section`
 
 export const OurClientsContainer = styled.div`
   max-width: 920px;
-  //padding: 16px;
-  //box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
 `;
 
 export const OurClientsTitle = styled.h2`
