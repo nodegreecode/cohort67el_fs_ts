@@ -19,10 +19,6 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
-    compilerOptions: {
-      "noUnusedLocals": false,
-      "noUnusedParameters": false
-    },
     rules: {
       "prefer-const": "off",
       "@typescript-eslint/prefer-const": "off",
