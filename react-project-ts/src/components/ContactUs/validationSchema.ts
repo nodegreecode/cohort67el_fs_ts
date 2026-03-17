@@ -11,6 +11,7 @@ export const validationSchema = Yup.object().shape({
     .min(4, "Phone must be at least 4 characters")
     .max(20, "Phone must be at most 20 characters"),
   [CONTACT_FORM_VALUES.EMAIL]: Yup.string()
+    .email("This field should be in email format")
     .min(6, "Email must be at least 6 characters")
     .max(60, "Email must be at most 60 characters"),
 });

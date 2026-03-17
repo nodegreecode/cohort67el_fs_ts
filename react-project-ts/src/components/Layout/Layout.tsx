@@ -1,4 +1,4 @@
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   LayoutWrapper,
   Header,
@@ -18,9 +18,9 @@ import { type LayoutProps } from "./types";
 function Layout({ children }: LayoutProps) {
   const navigate = useNavigate();
 
- const goToHomePage = (): void => {
-   navigate("/");
- }
+  const goToHomePage = (): void => {
+    navigate("/");
+  };
   return (
     <LayoutWrapper>
       <Header>
@@ -33,6 +33,9 @@ function Layout({ children }: LayoutProps) {
         <NavigationContainer>
           <HeaderLink style={getActiveStyles} to="/">
             Home
+          </HeaderLink>
+          <HeaderLink style={getActiveStyles} to="/clients">
+            Clients
           </HeaderLink>
           <HeaderLink style={getActiveStyles} to="/contact">
             Contact Us
@@ -55,6 +58,7 @@ function Layout({ children }: LayoutProps) {
         </FooterLogo>
         <FooterNavigation>
           <FooterLink to="/">Home</FooterLink>
+          <FooterLink to="/clients">Clients</FooterLink>
           <FooterLink to="/contact">Contact Us</FooterLink>
           <FooterLink to="/about">About</FooterLink>
           <FooterLink to="/login">Login</FooterLink>
