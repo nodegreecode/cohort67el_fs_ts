@@ -1,7 +1,12 @@
-import { PageWrapper } from "./styles.ts";
+import {
+  PageWrapper,
+  CompanyCard,
+  CompanyInfo,
+  CompanyTitle,
+  WebSiteLink,
+} from "./styles.ts";
 import { useNavigate } from "react-router-dom";
 import Button from "components/Button/Button.tsx";
-import { CompanyCard, CompanyInfo, CompanyTitle } from "../Airbnb/styles.ts";
 
 export default function Asus() {
   const navigate = useNavigate();
@@ -19,6 +24,9 @@ export default function Asus() {
           for innovation, high‑quality components, and a broad product
           ecosystem.
         </CompanyInfo>
+        <WebSiteLink href="https://www.asus.com/de/" target="_blank">
+          Go to website
+        </WebSiteLink>
         <Button name="Back" onClick={handleClick} />
       </CompanyCard>
     </PageWrapper>

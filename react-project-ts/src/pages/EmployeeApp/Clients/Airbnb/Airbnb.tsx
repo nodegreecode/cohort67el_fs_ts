@@ -4,6 +4,7 @@ import {
   CompanyCard,
   CompanyTitle,
   CompanyInfo,
+  WebSiteLink,
 } from "./styles.ts";
 import Button from "components/Button/Button.tsx";
 
@@ -21,6 +22,9 @@ export default function Airbnb() {
           220 countries and regions. The platform lists millions of properties
           and is widely used for both leisure and business travel.
         </CompanyInfo>
+        <WebSiteLink href="https://www.airbnb.de/" target="_blank">
+          Go to website
+        </WebSiteLink>
         <Button name="Back" onClick={handleClick} />
       </CompanyCard>
     </PageWrapper>

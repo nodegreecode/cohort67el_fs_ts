@@ -1,7 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import { PageWrapper } from "./styles.ts";
-import Button from "../../../../components/Button/Button.tsx";
-import { CompanyCard, CompanyInfo, CompanyTitle } from "../Airbnb/styles.ts";
+import {
+  PageWrapper,
+  CompanyCard,
+  CompanyInfo,
+  CompanyTitle,
+} from "./styles.ts";
+import Button from "components/Button/Button.tsx";
 
 export default function Intel() {
   const navigate = useNavigate();

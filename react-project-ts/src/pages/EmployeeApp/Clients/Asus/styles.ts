@@ -25,3 +25,14 @@ export const CompanyInfo = styled.p`
   margin-bottom: 32px;
   text-align: justify;
 `;
+
+export const WebSiteLink = styled.a`
+  display: block;
+  text-decoration: none;
+  color: grey;
+  margin-bottom: 16px;
+  
+  &:hover, :active {
+    color: black;
+  }
+`;
