@@ -21,13 +21,14 @@ import GlobalStyles from "./styles/GlobalStyles.tsx";
 //import Lesson_11 from "./lessons/Lesson_11/Lesson_11.tsx";
 //import Lesson_12 from "./lessons/Lesson_12/Lesson_12.tsx";
 //import Lesson_13 from "./lessons/Lesson_13/Lesson_13.tsx";
-import Lesson_14 from "./lessons/Lesson_14/Lesson_14.tsx";
+//import Lesson_14 from "./lessons/Lesson_14/Lesson_14.tsx";
 //import Homework_06 from "./homeworks/Homework_06/Homework_06.tsx";
 //import Homework_07 from "./homeworks/Homework_07/Homework_07.tsx";
 //import Homework_08 from "./homeworks/Homework_08/Homework_08.tsx";
 //import Homework_09 from "./homeworks/Homework_09/Homework_09.tsx";
 //import Homework_10 from "./homeworks/Homework_10/Homework_10.tsx";
 //import Homework_12 from "./homeworks/Homework_12/Homework_12.tsx";
+import Homework_13 from "homeworks/Homework_13/Homework_13.tsx";
 
 function App() {
   return (
@@ -58,7 +59,7 @@ function App() {
       {/*<Lesson_11 />*/}
       {/*<Lesson_12/>*/}
       {/*<Lesson_13 />*/}
-      <Lesson_14 />
+      {/*<Lesson_14 />*/}
 
       {/*HOMEWORKS*/}
       {/* <Homework_06 />*/}
@@ -67,6 +68,7 @@ function App() {
       {/*<Homework_09 />*/}
       {/* <Homework_10 />*/}
       {/*<Homework_12 />*/}
+      <Homework_13 />
     </BrowserRouter>
   );
 }
