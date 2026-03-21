@@ -14,7 +14,7 @@ const validationSchema = Yup.object().shape({
   [LOGIN_FORM_VALUES.PASSWORD]: Yup.string()
     .required("Password field is required")
     .min(5, "Password field should contain min 5 characters")
-    .max(20, 'Password field should contain max 20 characters"'),
+    .max(20, 'Password field should contain max 20 characters'),
 });
 
 function LoginForm() {

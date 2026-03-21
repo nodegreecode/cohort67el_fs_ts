@@ -13,6 +13,10 @@ import GlobalStyles from "./styles/GlobalStyles.tsx";
 //import About from "pages/EmployeeApp/About/About.tsx";
 //import ContactUs from "pages/EmployeeApp/ContactUs/ContactUs.tsx";
 //import LogIn from "pages/EmployeeApp/LogIn/LogIn.tsx";
+//import Clients from "./pages/EmployeeApp/Clients/Clients.tsx";
+import Layout from "pages/UserManagement/components/Layout/Layout.tsx";
+import Employee from "./pages/UserManagement/components/CreateEmployee/Employee.tsx";
+import Employees from "pages/UserManagement/components/Employees/Employees.tsx";
 
 //import Lesson_06 from "./lessons/Lesson_06/Lesson_06";
 //import Lesson_07 from "./lessons/Lesson_07/Lesson_07";
@@ -28,12 +32,18 @@ import GlobalStyles from "./styles/GlobalStyles.tsx";
 //import Homework_09 from "./homeworks/Homework_09/Homework_09.tsx";
 //import Homework_10 from "./homeworks/Homework_10/Homework_10.tsx";
 //import Homework_12 from "./homeworks/Homework_12/Homework_12.tsx";
-import Homework_13 from "homeworks/Homework_13/Homework_13.tsx";
+//import Homework_13 from "homeworks/Homework_13/Homework_13.tsx";
 
 function App() {
   return (
     <BrowserRouter>
       <GlobalStyles />
+      <Layout>
+        <Routes>
+          <Route path="/employee" element={<Employee />} />
+          <Route path="/employees" element={<Employees />} />
+        </Routes>
+      </Layout>
       {/* <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -68,7 +78,7 @@ function App() {
       {/*<Homework_09 />*/}
       {/* <Homework_10 />*/}
       {/*<Homework_12 />*/}
-      <Homework_13 />
+      {/*<Homework_13 />*/}
     </BrowserRouter>
   );
 }
