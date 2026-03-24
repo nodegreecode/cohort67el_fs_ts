@@ -21,7 +21,7 @@ export default function Employee() {
     validationSchema,
     validateOnChange: false,
     onSubmit: (values, formikHelpers) => {
-      fetchEmployeeData(values);
+      fetchEmployeeData((prevValue:EmployeeFormValues[]) => [...prevValue, values]);
       formikHelpers.resetForm();
     },
   });

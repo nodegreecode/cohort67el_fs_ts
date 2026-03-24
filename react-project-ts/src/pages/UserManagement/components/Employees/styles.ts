@@ -7,6 +7,12 @@ export const PageWrapper = styled.section`
   flex: 1;
 `;
 
+export const EmployeesCardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
+
 export const EmployeesCard = styled.article`
   width: 620px;
   border-radius: 5px;
