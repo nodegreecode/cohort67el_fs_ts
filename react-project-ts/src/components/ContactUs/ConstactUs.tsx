@@ -9,7 +9,7 @@ import {
   FormControl,
   GroupControl,
 } from "./styles.ts";
-import {validationSchema} from "./validationSchema.ts";
+import {schema} from "./schema.ts";
 import { CONTACT_FORM_VALUES } from "./types.ts";
 import { useFormik } from "formik";
 
@@ -21,7 +21,7 @@ export default function ContactUs() {
       [CONTACT_FORM_VALUES.PHONE]: "",
       [CONTACT_FORM_VALUES.EMAIL]: "",
     },
-    validationSchema,
+    validationSchema: schema,
     validateOnChange: false,
     onSubmit: (values) => {
       console.log(values);

@@ -24,6 +24,8 @@ export const InputLabel = styled.label`
   color: hsl(0, 0%, 44%);
 `;
 
+export const Asterisk = styled.span``;
+
 export const InputComponent = styled.input<InputComponentProps>`
   width: 100%;
   height: 50px;

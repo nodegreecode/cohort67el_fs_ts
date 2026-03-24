@@ -1,7 +1,7 @@
 import * as Yup from "yup";
 import { CONTACT_FORM_VALUES } from "./types.ts";
 
-export const validationSchema = Yup.object().shape({
+export const schema = Yup.object().shape({
   [CONTACT_FORM_VALUES.FULL_NAME]: Yup.string()
     .required("Full Name is required")
     .min(3, "Full name must be at least 3 characters")
