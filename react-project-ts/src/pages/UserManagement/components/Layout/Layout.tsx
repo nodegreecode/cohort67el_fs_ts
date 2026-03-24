@@ -17,16 +17,14 @@ import { MainContext } from "./context.ts";
 import { type EmployeeData, type LayoutProps } from "./types.ts";
 
 export default function Layout({ children }: LayoutProps) {
-  const [employeeData, setEmployeeData] = useState<EmployeeData | undefined>(
-    undefined,
-  );
+  const [employeeData, setEmployeeData] = useState<EmployeeData[]>([]);
   return (
     <MainContext.Provider
       value={{ employeeData: employeeData, fetchEmployeeData: setEmployeeData }}
     >
       <LayoutWrapper>
         <Header>
-          <Logo onClick={() => {}}>
+          <Logo>
             <LogoImg src={terraform} alt="Logo" />
           </Logo>
           <NavigationContainer>

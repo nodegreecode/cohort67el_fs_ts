@@ -8,8 +8,8 @@ export interface EmployeeData {
 }
 
 export interface EmployeeDataContext {
-  employeeData: EmployeeData | undefined;
-  fetchEmployeeData: Dispatch<SetStateAction<EmployeeData | undefined>>;
+  employeeData: EmployeeData[];
+  fetchEmployeeData: Dispatch<SetStateAction<EmployeeData[]>>;
 }
 
 export type LayoutProps = {
